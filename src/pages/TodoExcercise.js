@@ -11,6 +11,8 @@ import { Under } from "../utils/Exsercise/Under";
 import { Stomach } from "../utils/Exsercise/Stomach";
 import { useCookies } from "react-cookie";
 import moment from "moment";
+import { DownOutlined } from "@ant-design/icons";
+import { Dropdown, Space } from "antd";
 
 const TodoExcersise = () => {
   const [id, setId] = useState(1);
@@ -22,6 +24,7 @@ const TodoExcersise = () => {
   const [timeToNum, setTimeToNum] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies();
   const [input, setInput] = useState(cookies.exsercise);
+  const [info, setInfo] = useState();
 
   useEffect(() => {
     setTime(0);
@@ -35,7 +38,6 @@ const TodoExcersise = () => {
 
     setId(id + 1);
   };
-
   const onFinish = (values) => {
     if (!isType) {
       alert("종류를 정해주세요");
@@ -126,6 +128,11 @@ const TodoExcersise = () => {
               defaultValue="운동 종류를 선택해주세요"
               onChange={(e) => {
                 setIsExsercise(true);
+                const id = exsercise(role).map((i) => {
+                  if (i.label == e) {
+                    setInfo(i.id);
+                  }
+                });
                 if (e == "플랭크" || e == "러닝") {
                   setTimeToNum(false);
                 } else {
@@ -150,19 +157,38 @@ const TodoExcersise = () => {
             />
           </Form.Item>
         )}
-        {!timeToNum ? (
-          <Stopwatch time={time} setTime={setTime} />
-        ) : (
+        {isExsercise ? (
           <>
-            <Form.Item name="number">
-              <Input
-                onChange={(e) => {
-                  setTime(e.target.value);
-                }}
-                placeholder="횟수를 입력하세요"
+            <div>
+              <h1>{exsercise(role)[info]?.label}</h1>
+              <p>{exsercise(role)[info]?.info}</p>
+              <iframe
+                width="560"
+                height="315"
+                src={exsercise(role)[info].src}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
               />
-            </Form.Item>
+            </div>
+            {!timeToNum ? (
+              <Stopwatch time={time} setTime={setTime} />
+            ) : (
+              <>
+                <Form.Item name="number">
+                  <Input
+                    onChange={(e) => {
+                      setTime(e.target.value);
+                    }}
+                    placeholder="횟수를 입력하세요"
+                  />
+                </Form.Item>
+              </>
+            )}
           </>
+        ) : (
+          <></>
         )}
         <Form.Item>
           <Button type="primary" htmlType="submit">
