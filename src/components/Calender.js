@@ -1,13 +1,19 @@
 import React, { useEffect } from "react";
 import { Calendar, Empty, Modal } from "antd";
-import { getListData } from "../utils/DummyExDate";
+// import { getListData } from "../utils/DummyExDate";
 import { useCookies } from "react-cookie";
+
+export const getListData = (value, item) => {
+  const listData = [item];
+  return listData || [];
+};
 
 const getMonthData = (value) => {
   if (value.month() === 8) {
     return 1394;
   }
 };
+
 const info = (item) => {
   Modal.info({
     title: "This is a notification message",
