@@ -8,16 +8,16 @@ export const Under = [
     src: "https://www.youtube.com/embed/QbeiVQPM-hc",
     step: [
       {
-        id: 1,
-        how: "다리를 앞뒤로 넓게 벌려 섭니다.",
+        key: 1,
+        description: "다리를 앞뒤로 넓게 벌려 섭니다.",
       },
       {
-        id: 2,
-        how: "앞 다리에 무게중심을 두고 수직으로 내려갑니다.",
+        key: 2,
+        description: "앞 다리에 무게중심을 두고 수직으로 내려갑니다.",
       },
       {
-        id: 3,
-        how: "무릎이 땅에 닿는다는 느낌으로 깊게 내려가 줍니다.",
+        key: 3,
+        description: "무릎이 땅에 닿는다는 느낌으로 깊게 내려가 줍니다.",
       },
     ],
   },
@@ -30,16 +30,16 @@ export const Under = [
     src: "https://www.youtube.com/embed/UL5h5lPXW1I",
     step: [
       {
-        id: 1,
-        how: "발을 어깨 넓이보다 약간 넓게 벌리고 섭니다.",
+        key: 1,
+        description: "발을 어깨 넓이보다 약간 넓게 벌리고 섭니다.",
       },
       {
-        id: 2,
-        how: "상체를 세우고 엉덩이를 뒤로 빼며 내려갑니다.",
+        key: 2,
+        description: "상체를 세우고 엉덩이를 뒤로 빼며 내려갑니다.",
       },
       {
-        id: 3,
-        how: "고관절을 사용하여 허리가 굽지 않도록 주의합니다.",
+        key: 3,
+        description: "고관절을 사용하여 허리가 굽지 않도록 주의합니다.",
       },
     ],
   },
@@ -52,16 +52,16 @@ export const Under = [
     src: "https://www.youtube.com/embed/W8-rqFhuXrI",
     step: [
       {
-        id: 1,
-        how: "머리 뒤로 깍지를 껴 팔을 양옆으로 벌립니다.",
+        key: 1,
+        description: "머리 뒤로 깍지를 껴 팔을 양옆으로 벌립니다.",
       },
       {
-        id: 2,
-        how: "무릎은 높게 들고 팔꿈치는 내려 서로 가까워지도록 합니다.",
+        key: 2,
+        description: "무릎은 높게 들고 팔꿈치는 내려 서로 가까워지도록 합니다.",
       },
       {
-        id: 3,
-        how: "한쪽씩 양쪽을 번갈아 가면서 진행해 줍니다.",
+        key: 3,
+        description: "한쪽씩 양쪽을 번갈아 가면서 진행해 줍니다.",
       },
     ],
   },
@@ -74,16 +74,17 @@ export const Under = [
     src: "https://www.youtube.com/embed/PgYZpD3HIqw",
     step: [
       {
-        id: 1,
-        how: "무릎을 적당히 굽혀 편하게 누워줍니다.",
+        key: 1,
+        description: "무릎을 적당히 굽혀 편하게 누워줍니다.",
       },
       {
-        id: 2,
-        how: "엉덩이와 복부에 힘을주어 엉덩이를 들어줍니다.",
+        key: 2,
+        description: "엉덩이와 복부에 힘을주어 엉덩이를 들어줍니다.",
       },
       {
-        id: 3,
-        how: "엉덩이를 들 때 허리에 과도한 힘이 들어가지 않도록 주의합니다.",
+        key: 3,
+        description:
+          "엉덩이를 들 때 허리에 과도한 힘이 들어가지 않도록 주의합니다.",
       },
     ],
   },
@@ -96,16 +97,17 @@ export const Under = [
     src: "https://www.youtube.com/embed/BwHNiaee0D8",
     step: [
       {
-        id: 1,
-        how: "다리를 약간 벌리고 무릎을 적당히 굽혀 편하게 눕고 머리 양옆으로 손을 짚어줍니다",
+        key: 1,
+        description:
+          "다리를 약간 벌리고 무릎을 적당히 굽혀 편하게 눕고 머리 양옆으로 손을 짚어줍니다",
       },
       {
-        id: 2,
-        how: "팔과 다리 그리고 복부에 힘을 주어 힘차게 밀며 일어납니다",
+        key: 2,
+        description: "팔과 다리 그리고 복부에 힘을 주어 힘차게 밀며 일어납니다",
       },
       {
-        id: 3,
-        how: "허리가 과도하게 꺾이지 않도록 주의하며 진행해줍니다",
+        key: 3,
+        description: "허리가 과도하게 꺾이지 않도록 주의하며 진행해줍니다",
       },
     ],
   },
@@ -115,19 +117,20 @@ export const Under = [
     label: "스위머",
     level: 3,
     info: "전신근육 강화,코어 힘 강화,척추 기립근 강화",
-    src: "https://www.youtube.com/_nNV7QtsSbo",
+    src: "https://www.youtube.com/embed/B37bWwZAkVY",
     step: [
       {
-        id: 1,
-        how: "편하게 엎드려서 팔을 앞으로 뻗어줍니다",
+        key: 1,
+        description: "편하게 엎드려서 팔을 앞으로 뻗어줍니다",
       },
       {
-        id: 2,
-        how: "등과 복부 그리고 허리에 힘을 주어 팔과 다리를 들어줍니다",
+        key: 2,
+        description: "등과 복부 그리고 허리에 힘을 주어 팔과 다리를 들어줍니다",
       },
       {
-        id: 3,
-        how: "등에 힘을주어 날개뼈를 모아주듯이 상체를 들며 팔꿈치를 뒤로 보내줍니다",
+        key: 3,
+        description:
+          "등에 힘을주어 날개뼈를 모아주듯이 상체를 들며 팔꿈치를 뒤로 보내줍니다",
       },
     ],
   },

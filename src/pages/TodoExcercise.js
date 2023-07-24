@@ -1,4 +1,4 @@
-import { Button, Form, Input, Select } from "antd";
+import { Button, Form, Input, Select, Steps } from "antd";
 import React, { useEffect, useState } from "react";
 import Menu from "../components/menu/Menu";
 import Stopwatch from "../components/Stopwatch";
@@ -11,8 +11,6 @@ import { Under } from "../utils/Exsercise/Under";
 import { Stomach } from "../utils/Exsercise/Stomach";
 import { useCookies } from "react-cookie";
 import moment from "moment";
-import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space } from "antd";
 
 const TodoExcersise = () => {
   const [id, setId] = useState(1);
@@ -163,14 +161,13 @@ const TodoExcersise = () => {
               <h1>{exsercise(role)[info]?.label}</h1>
               <p>{exsercise(role)[info]?.info}</p>
               <iframe
-                width="560"
-                height="315"
-                src={exsercise(role)[info].src}
+                src={exsercise(role)[info]?.src}
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
               />
+              <Steps direction="vertical" items={exsercise(role)[info].step} />
             </div>
             {!timeToNum ? (
               <Stopwatch time={time} setTime={setTime} />
