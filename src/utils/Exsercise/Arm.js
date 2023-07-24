@@ -1,10 +1,11 @@
 export const Arm = [
   {
+    id: 0,
     value: "푸쉬업",
     label: "푸쉬업",
     level: 1,
     info: "전신 근육 활성화, 굽은 등 교정, 유산소&근력 운동, 견갑 안정화, 가슴 근육 집중 발달",
-    src: "https://youtube.com/watch?v=qJmZLWZArzc&feature=share",
+    src: "https://www.youtube.com/embed/qJmZLWZArzc",
     step: [
       {
         id: 1,
@@ -21,11 +22,12 @@ export const Arm = [
     ],
   },
   {
+    id: 1,
     value: "숄더터치 푸쉬업",
     label: "숄더터치 푸쉬업",
     level: 2,
     info: "가슴 근육 강화, 코어 근육 강화, 어깨 근육 강화",
-    src: "https://youtu.be/0fiHzU6SyXE",
+    src: "https://www.youtube.com/embed/0fiHzU6SyXE",
     step: [
       {
         id: 1,
@@ -42,11 +44,12 @@ export const Arm = [
     ],
   },
   {
+    id: 2,
     value: "브릿지",
     label: "브릿지",
     level: 3,
     info: "허리통증 완화, 무릎 강화, 자세 교정, 힙업 효과, 균형 감각 향상, 뱃살 체지방 감소",
-    src: "https://youtu.be/BwHNiaee0D8",
+    src: "https://www.youtube.com/embed/BwHNiaee0D8",
     step: [
       {
         id: 1,
@@ -63,11 +66,12 @@ export const Arm = [
     ],
   },
   {
+    id: 3,
     value: "스위머",
     label: "스위머",
     level: 3,
     info: "전신근육 강화,코어 힘 강화,척추 기립근 강화",
-    src: "https://youtu.be/_nNV7QtsSbo",
+    src: "https://www.youtube.com/_nNV7QtsSbo",
     step: [
       {
         id: 1,

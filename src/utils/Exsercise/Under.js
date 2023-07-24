@@ -1,10 +1,11 @@
 export const Under = [
   {
+    id: 0,
     value: "런지",
     label: "런지",
     level: 1,
     info: "균형감각, 좌우 대칭, 약한 근육 강화,힙업&유연성 증가, 코어 강화, 허리 건강",
-    src: "https://youtube.com/watch?v=QbeiVQPM-hc&feature=share",
+    src: "https://www.youtube.com/embed/QbeiVQPM-hc",
     step: [
       {
         id: 1,
@@ -21,11 +22,12 @@ export const Under = [
     ],
   },
   {
+    id: 1,
     value: "스쿼트",
     label: "스쿼트",
     level: 1,
     info: "하체 근력 강화, 코어 강화, 자세 교정, 골밀도 향상, 심혈관 건강 향상, 체중 감량의 도움, 발목 및 무릎의 부상 위험 감소",
-    src: "https://youtube.com/watch?v=UL5h5lPXW1I&feature=share",
+    src: "https://www.youtube.com/embed/UL5h5lPXW1I",
     step: [
       {
         id: 1,
@@ -42,11 +44,12 @@ export const Under = [
     ],
   },
   {
+    id: 2,
     value: "스탠딩 사이드 크런치",
     label: "스탠딩 사이드 크런치",
     level: 1,
     info: "허리 라인 개선, 복직근과 외복사근 강화",
-    src: "https://youtube.com/watch?v=W8-rqFhuXrI&feature=share",
+    src: "https://www.youtube.com/embed/W8-rqFhuXrI",
     step: [
       {
         id: 1,
@@ -63,11 +66,12 @@ export const Under = [
     ],
   },
   {
+    id: 3,
     value: "힙쓰러스트",
     label: "힙쓰러스트",
     level: 2,
     info: "엉덩이 근육 강화, 균형감각 개선, 노폐물 제거",
-    src: "https://youtu.be/PgYZpD3HIqw",
+    src: "https://www.youtube.com/embed/PgYZpD3HIqw",
     step: [
       {
         id: 1,
@@ -84,11 +88,12 @@ export const Under = [
     ],
   },
   {
+    id: 4,
     value: "브릿지",
     label: "브릿지",
     level: 3,
     info: "허리통증 완화, 무릎 강화, 자세 교정, 힙업 효과, 균형 감각 향상, 뱃살 체지방 감소",
-    src: "https://youtu.be/BwHNiaee0D8",
+    src: "https://www.youtube.com/embed/BwHNiaee0D8",
     step: [
       {
         id: 1,
@@ -105,11 +110,12 @@ export const Under = [
     ],
   },
   {
+    id: 5,
     value: "스위머",
     label: "스위머",
     level: 3,
     info: "전신근육 강화,코어 힘 강화,척추 기립근 강화",
-    src: "https://youtu.be/_nNV7QtsSbo",
+    src: "https://www.youtube.com/_nNV7QtsSbo",
     step: [
       {
         id: 1,

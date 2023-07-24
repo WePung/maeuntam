@@ -1,16 +1,18 @@
 export const Aerobic = [
   {
+    id: 0,
     value: "러닝",
     label: "러닝",
     level: 1,
     info: "다이어트 효과, 체력 단련, 스트레스 해소, 불면증 해소, 정신 건강",
   },
   {
+    id: 1,
     value: "줄넘기",
     label: "줄넘기",
     level: 1,
     info: "전신 운동, 근력 증대 및 운동 능력 향상, 골밀도 증가, 심장 건강 향상, 민첩성과 균형감각 향상",
-    src: "https://youtube.com/watch?v=8ki9cCy4Kko&feature=share",
+    src: "https:/www.youtube.com/watch?v=8ki9cCy4Kko&feature=share",
     step: [
       {
         id: 1,
@@ -27,11 +29,12 @@ export const Aerobic = [
     ],
   },
   {
+    id: 2,
     value: "버피테스트",
     label: "버피테스트",
     level: 1,
     info: "근력 향상,심폐 운동으로 작용,지방을 효과적으로 연소",
-    src: "https://youtube.com/watch?v=K10SQGT-W1Q&feature=share",
+    src: "https:/www.youtube.com/watch?v=K10SQGT-W1Q&feature=share",
     step: [
       {
         id: 1,
@@ -48,11 +51,12 @@ export const Aerobic = [
     ],
   },
   {
+    id: 3,
     value: "브릿지",
     label: "브릿지",
     level: 3,
     info: "허리통증 완화, 무릎 강화, 자세 교정, 힙업 효과, 균형 감각 향상, 뱃살 체지방 감소",
-    src: "https://youtu.be/BwHNiaee0D8",
+    src: "https://www.youtube.com/embed/BwHNiaee0D8",
     step: [
       {
         id: 1,
@@ -69,11 +73,12 @@ export const Aerobic = [
     ],
   },
   {
+    id: 4,
     value: "스위머",
     label: "스위머",
     level: 3,
     info: "전신근육 강화,코어 힘 강화,척추 기립근 강화",
-    src: "https://youtu.be/_nNV7QtsSbo",
+    src: "https://www.youtube.com/_nNV7QtsSbo",
     step: [
       {
         id: 1,

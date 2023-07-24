@@ -1,10 +1,11 @@
 export const Stomach = [
   {
+    id: 0,
     value: "윗몸 일으키기",
     label: "윗몸 일으키기",
     level: 1,
     info: "코어 강화, 척추 유연성, 고관절 굴곡 강화, 요통 예방, 자세 개선, 운동신경 향상",
-    src: "https://youtube.com/watch?v=JHs-Itdi2go&feature=share",
+    src: "https://www.youtube.com/embed/JHs-Itdi2go",
     step: [
       {
         id: 1,
@@ -21,11 +22,12 @@ export const Stomach = [
     ],
   },
   {
+    id: 1,
     value: "크런치",
     label: "크런치",
     level: 1,
     info: "코어 힘 향상, 요통 개선, 부상 예방,체지방 감소",
-    src: "https://youtube.com/watch?v=FmbMjcBfuWc&feature=share",
+    src: "https://www.youtube.com/embed/FmbMjcBfuWc",
     step: [
       {
         id: 1,
@@ -42,11 +44,12 @@ export const Stomach = [
     ],
   },
   {
+    id: 2,
     value: "스탠딩 사이드 크런치",
     label: "스탠딩 사이드 크런치",
     level: 1,
     info: "허리 라인 개선, 복직근과 외복사근 강화",
-    src: "https://youtube.com/watch?v=W8-rqFhuXrI&feature=share",
+    src: "https://www.youtube.com/embed/W8-rqFhuXrI",
     step: [
       {
         id: 1,
@@ -63,11 +66,12 @@ export const Stomach = [
     ],
   },
   {
+    id: 3,
     value: "플랭크",
     label: "플랭크",
     level: 2,
     info: "근지구력 향상, 자세 교정, 코어 강화, 유연성 증가",
-    src: "https://youtube.com/watch?v=OFZRukAA4YM&feature=share",
+    src: "https://www.youtube.com/embed/OFZRukAA4YM",
     step: [
       {
         id: 1,
@@ -84,11 +88,12 @@ export const Stomach = [
     ],
   },
   {
+    id: 4,
     value: "힙쓰러스트",
     label: "힙쓰러스트",
     level: 2,
     info: "엉덩이 근육 강화, 균형감각 개선, 노폐물 제거",
-    src: "https://youtu.be/PgYZpD3HIqw",
+    src: "https://www.youtube.com/embed/PgYZpD3HIqw",
     step: [
       {
         id: 1,
@@ -105,11 +110,12 @@ export const Stomach = [
     ],
   },
   {
+    id: 5,
     value: "브릿지",
     label: "브릿지",
     level: 3,
     info: "허리통증 완화, 무릎 강화, 자세 교정, 힙업 효과, 균형 감각 향상, 뱃살 체지방 감소",
-    src: "https://youtu.be/BwHNiaee0D8",
+    src: "https://www.youtube.com/embed/BwHNiaee0D8",
     step: [
       {
         id: 1,
@@ -126,11 +132,12 @@ export const Stomach = [
     ],
   },
   {
+    id: 6,
     value: "스위머",
     label: "스위머",
     level: 3,
     info: "전신근육 강화,코어 힘 강화,척추 기립근 강화",
-    src: "https://youtu.be/_nNV7QtsSbo",
+    src: "https://www.youtube.com/_nNV7QtsSbo",
     step: [
       {
         id: 1,
