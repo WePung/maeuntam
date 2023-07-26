@@ -27,7 +27,6 @@ const info = (item) => {
 };
 const Calender = () => {
   const [cookies, setCookie] = useCookies();
-
   const monthCellRender = (value) => {
     const num = getMonthData(value);
     return num ? (
@@ -42,10 +41,10 @@ const Calender = () => {
     return (
       <ul className="events">
         {listData.map((item) => {
+          console.log(item);
           if (item?.year == value.$y) {
             if (item.month == value.$M) {
               if (item.day == value.$D) {
-                console.log(item);
                 return (
                   <>
                     <li

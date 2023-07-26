@@ -19,6 +19,16 @@ const Home = () => {
       setCookie("exsercise", { id: 0, isVaild: true });
     }
   }, []);
+  // useEffect(() => {
+  //   if (cookies.exsercise === undefined) {
+  //     setCookie("exsercise", {
+  //       id: 0,
+  //       info: {
+  //         isVaild: true,
+  //       },
+  //     });
+  //   }
+  // }, []);
 
   return (
     <>

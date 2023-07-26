@@ -28,14 +28,6 @@ const TodoExcersise = () => {
     setTime(0);
   }, [role]);
 
-  const add = (body) => {
-    console.log(body);
-    console.log(cookies.exsercise);
-    setInput([{ ...input }, body]);
-    setCookie("exsercise", input);
-
-    setId(id + 1);
-  };
   const onFinish = (values) => {
     if (!isType) {
       alert("종류를 정해주세요");
@@ -44,15 +36,32 @@ const TodoExcersise = () => {
     } else if (time === 0) {
       alert("운동을 시작해주세요");
     } else {
-      const body = {
-        id: id,
-        year: moment().format("YYYY"),
-        month: moment().format("M") - 1,
-        day: moment().format("D"),
-        titme: values.exsercise,
-        number: time,
-      };
-      add(body);
+      // const body = [
+      //   {
+      //     id: id,
+      //     info: {
+      //       id: id,
+      //       year: moment().format("YYYY"),
+      //       month: moment().format("M"),
+      //       day: moment().format("D"),
+      //       titme: values.exsercise,
+      //       number: time,
+      //     },
+      //   },
+      // ];
+      const body = [
+        {
+          id: id,
+          year: moment().format("YYYY"),
+          month: moment().format("M"),
+          day: moment().format("D"),
+          titme: values.exsercise,
+          number: time,
+        },
+      ];
+      setInput([cookies.exsercise]);
+      removeCookie("exsercise");
+      setCookie("exsercise", input.concat(body));
     }
   };
 
