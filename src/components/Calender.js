@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import { Calendar, Empty, Modal } from "antd";
-// import { getListData } from "../utils/DummyExDate";
+import React from "react";
+import { Calendar, Modal } from "antd";
 import { useCookies } from "react-cookie";
 
 export const getListData = (value, item) => {
@@ -41,26 +40,46 @@ const Calender = () => {
     return (
       <ul className="events">
         {listData.map((item) => {
-          console.log(item);
-          if (item?.year == value.$y) {
-            if (item.month == value.$M) {
-              if (item.day == value.$D) {
-                return (
-                  <>
-                    <li
-                      key={item.day}
-                      onClick={() => {
-                        info(item);
-                      }}
-                    >
-                      {item.title} : {item.number}회
-                    </li>
-                  </>
-                );
+          return (
+            <>
+              <li
+                key={item}
+                onClick={() => {
+                  info(item);
+                }}
+              >
+                1
+              </li>
+            </>
+          );
+        })}
+        {/* {listData.map((item) => {
+          item.map((v) => {
+            if (v?.year == value.$y) {
+              if (v.month == value.$M) {
+                console.log(v.month);
+                console.log(v.day);
+                console.log(value.$M);
+                console.log(value.$D);
+                if (v.day == value.$D + 18) {
+                  console.log(v);
+                  return (
+                    <>
+                      <li
+                        key={v.day}
+                        onClick={() => {
+                          info(v);
+                        }}
+                      >
+                        {v.title} : {v.number}회
+                      </li>
+                    </>
+                  );
+                }
               }
             }
-          }
-        })}
+          });
+        })} */}
       </ul>
     );
   };

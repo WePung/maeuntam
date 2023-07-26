@@ -55,7 +55,7 @@ const TodoExcersise = () => {
           year: moment().format("YYYY"),
           month: moment().format("M"),
           day: moment().format("D"),
-          titme: values.exsercise,
+          title: values.exsercise,
           number: time,
         },
       ];
