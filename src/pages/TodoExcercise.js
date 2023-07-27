@@ -46,9 +46,11 @@ const TodoExcersise = () => {
           number: time,
         },
       ];
-      setInput([cookies.exsercise]);
+      setInput(cookies.exsercise);
       removeCookie("exsercise");
       setCookie("exsercise", input.concat(body));
+      setId(id + 1);
+      navigator("/");
     }
   };
 

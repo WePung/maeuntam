@@ -6,7 +6,6 @@ export const getListData = (value, item) => {
   const listData = [item];
   return listData || [];
 };
-
 const getMonthData = (value) => {
   if (value.month() === 8) {
     return 1394;
@@ -35,38 +34,20 @@ const Calender = () => {
       </div>
     ) : null;
   };
+
   const dateCellRender = (value) => {
     const listData = getListData(value, cookies.exsercise);
     return (
       <ul className="events">
         {listData.map((item) => {
-          return (
-            <>
-              <li
-                key={item}
-                onClick={() => {
-                  info(item);
-                }}
-              >
-                1
-              </li>
-            </>
-          );
-        })}
-        {/* {listData.map((item) => {
-          item.map((v) => {
-            if (v?.year == value.$y) {
-              if (v.month == value.$M) {
-                console.log(v.month);
-                console.log(v.day);
-                console.log(value.$M);
-                console.log(value.$D);
-                if (v.day == value.$D + 18) {
-                  console.log(v);
+          const test = item.map((v) => {
+            if (v.year == value.$y) {
+              if (v.month - 1 == value.$M) {
+                if (v.day == value.$D) {
                   return (
                     <>
                       <li
-                        key={v.day}
+                        key={v}
                         onClick={() => {
                           info(v);
                         }}
@@ -79,7 +60,8 @@ const Calender = () => {
               }
             }
           });
-        })} */}
+          return <>{test}</>;
+        })}
       </ul>
     );
   };
