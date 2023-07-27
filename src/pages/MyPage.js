@@ -2,7 +2,6 @@ import { Button, Col, Row } from "antd";
 import React from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import Menu from "../components/menu/Menu";
 const MyPage = () => {
   const [cookies, setCookie, removeCookie] = useCookies();
   const navigator = useNavigate();
@@ -17,7 +16,13 @@ const MyPage = () => {
   };
   return (
     <div>
-      <Menu />
+      <Button
+        onClick={() => {
+          navigator("/");
+        }}
+      >
+        홈
+      </Button>
       <Row justify="center">
         <Col>
           <ul style={{ listStyle: "none" }}>
@@ -40,7 +45,15 @@ const MyPage = () => {
           navigator("/");
         }}
       >
-        정보 삭제
+        사용자 정보 삭제
+      </Button>
+      <Button
+        onClick={() => {
+          removeCookie("exsercise");
+          setCookie("exsercise", { id: 0, isVaild: true });
+        }}
+      >
+        운동기록 삭제
       </Button>
     </div>
   );
