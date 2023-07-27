@@ -36,19 +36,6 @@ const TodoExcersise = () => {
     } else if (time === 0) {
       alert("운동을 시작해주세요");
     } else {
-      // const body = [
-      //   {
-      //     id: id,
-      //     info: {
-      //       id: id,
-      //       year: moment().format("YYYY"),
-      //       month: moment().format("M"),
-      //       day: moment().format("D"),
-      //       titme: values.exsercise,
-      //       number: time,
-      //     },
-      //   },
-      // ];
       const body = [
         {
           id: id,
