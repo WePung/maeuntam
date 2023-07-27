@@ -50,7 +50,8 @@ const MyPage = () => {
       <Button
         onClick={() => {
           removeCookie("exsercise");
-          setCookie("exsercise", { id: 0, isVaild: true });
+          setCookie("exsercise", [{ id: 0, isVaild: true }]);
+          navigator("/");
         }}
       >
         운동기록 삭제
