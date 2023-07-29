@@ -2,7 +2,7 @@ import React from "react";
 import { Calendar, Modal } from "antd";
 import { useCookies } from "react-cookie";
 
-export const getListData = (value, item) => {
+export const getListData = (item) => {
   const listData = [item];
   return listData || [];
 };
@@ -36,11 +36,11 @@ const Calender = () => {
   };
 
   const dateCellRender = (value) => {
-    const listData = getListData(value, cookies.exsercise);
+    const listData = getListData(cookies.exsercise);
     return (
       <ul className="events">
         {listData.map((item) => {
-          const test = item.map((v) => {
+          const test = item?.map((v) => {
             if (v.year == value.$y) {
               if (v.month - 1 == value.$M) {
                 if (v.day == value.$D) {
