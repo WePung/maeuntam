@@ -22,7 +22,6 @@ const Home = () => {
 
   return (
     <>
-      <Menu />
       {cookies.userInfo == 1 ? (
         <></>
       ) : (
