@@ -1,10 +1,25 @@
-import { Button, Col, Row } from "antd";
-import React from "react";
+import { Button, Col, Row, Modal, Avatar } from "antd";
+import { EditOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 const MyPage = () => {
   const [cookies, setCookie, removeCookie] = useCookies();
   const navigator = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    removeCookie("exsercise");
+    setCookie("exsercise", [{ id: 0, isVaild: true }]);
+    setIsModalOpen(false);
+    navigator("/");
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   const rank = (value) => {
     if (value == 1) {
       return "초급";
@@ -16,18 +31,22 @@ const MyPage = () => {
   };
   return (
     <div>
-      <Button
-        onClick={() => {
-          navigator("/");
-        }}
-      >
-        홈
-      </Button>
       <Row justify="center">
-        <Col>
+        <Col
+          xs={9}
+          md={2}
+          style={{
+            background: "red",
+            border: "1px solid black",
+            borderRadius: "10px",
+            marginTop: "2rem",
+          }}
+        >
+          <Avatar />
           <ul style={{ listStyle: "none" }}>
             <li>{cookies.userInfo.userName}</li>
-            <li>{rank(cookies.userInfo.level)}</li>
+            <li>운동 등급 : {rank(cookies.userInfo.level)}</li>
+            <li>몸무게 : {cookies.userInfo.weight}kg</li>
           </ul>
         </Col>
       </Row>
@@ -36,26 +55,20 @@ const MyPage = () => {
           navigator("/update");
         }}
       >
+        <EditOutlined />
         수정하기
       </Button>
-      <Button
-        onClick={() => {
-          removeCookie("userInfo");
-          setCookie("userInfo", 1);
-          navigator("/");
-        }}
-      >
-        사용자 정보 삭제
-      </Button>
-      <Button
-        onClick={() => {
-          removeCookie("exsercise");
-          setCookie("exsercise", [{ id: 0, isVaild: true }]);
-          navigator("/");
-        }}
-      >
+      <Button danger onClick={showModal}>
         운동기록 삭제
       </Button>
+      <Modal
+        title="Basic Modal"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <p>정말 정보를 삭제 하시겠습니까?</p>
+      </Modal>
     </div>
   );
 };

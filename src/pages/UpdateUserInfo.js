@@ -6,36 +6,26 @@ import { useNavigate } from "react-router-dom";
 const UpdateUserInfo = () => {
   const [cookies, setCookie, removeCookie] = useCookies();
   const navigator = useNavigate();
-  const [isUserName, setIsUserName] = useState(false);
-  const [isRank, setIsRank] = useState(false);
+  const [userName, setUserName] = useState(cookies.userInfo.userName);
+  const [level, setLevel] = useState(cookies.userInfo.level);
+  const [weight, setWeight] = useState(cookies.userInfo.weight);
+  console.log(userName);
   const onFinish = (values) => {
-    if (!isUserName || values.userName === "") {
-      alert("이름을 적어주세요");
-    } else if (!isRank) {
-      alert("등급을 정해주세요");
-    } else {
-      removeCookie("userInfo");
-      setCookie("userInfo", values);
-      navigator("/");
-    }
+    console.log(values);
+    removeCookie("userInfo");
+    setCookie("userInfo", values);
+    navigator("/");
   };
   return (
     <div>
       <Form onFinish={onFinish}>
         <Form.Item name="userName">
-          <Input
-            placeholder="이름을 재설정해주세요"
-            onChange={() => {
-              setIsUserName(true);
-            }}
-          />
+          <Input placeholder={userName} value={userName} />
         </Form.Item>
         <Form.Item name="level">
           <Select
-            onChange={() => {
-              setIsRank(true);
-            }}
-            defaultValue="등급을 재설정해주세요"
+            placeholder={level}
+            value={level}
             style={{
               width: 200,
             }}
@@ -54,6 +44,9 @@ const UpdateUserInfo = () => {
               },
             ]}
           />
+        </Form.Item>
+        <Form.Item name="weight">
+          <Input placeholder={weight} value={weight} />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">
