@@ -90,7 +90,6 @@ const TodoExcersise = () => {
   return (
     <div>
       <Form onFinish={onFinish}>
-        <Menu />
         <label>종류</label>
         <Form.Item name="typeOfExsercise">
           <Select
