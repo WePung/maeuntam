@@ -9,7 +9,15 @@ const UpdateUserInfo = () => {
   const [userName, setUserName] = useState(cookies.userInfo.userName);
   const [level, setLevel] = useState(cookies.userInfo.level);
   const [weight, setWeight] = useState(cookies.userInfo.weight);
-  console.log(userName);
+  const rank = (value) => {
+    if (value == 1) {
+      return "초급";
+    } else if (value == 2) {
+      return "중급";
+    } else if (value == 3) {
+      return "상급";
+    }
+  };
   const onFinish = (values) => {
     console.log(values);
     removeCookie("userInfo");
@@ -25,7 +33,7 @@ const UpdateUserInfo = () => {
         <Form.Item name="level">
           <Select
             placeholder={level}
-            value={level}
+            value={rank(level)}
             style={{
               width: 200,
             }}

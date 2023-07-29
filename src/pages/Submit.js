@@ -1,7 +1,12 @@
-import { Button, Form, Input, Select } from "antd";
+import { Button, Col, Form, Input, Row, Select } from "antd";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import {
+  levelValidate,
+  validateNickname,
+  validateWeight,
+} from "../utils/SubmitValidator";
 
 const Submit = () => {
   const [cookies, setCookie, removeCookie] = useCookies();
@@ -22,64 +27,62 @@ const Submit = () => {
       navigator("/");
     }
   };
-  // const addItem = () => {
-  //   const newItem = `item${items.length + 1}`;
-  //   setItems((prevItems) => [...prevItems, newItem]);
-  // };
   return (
-    <div>
-      <Form onFinish={onFinish}>
-        <label>이름</label>
-        <Form.Item name="userName">
-          <Input
-            onChange={() => {
-              setIsUserName(true);
-            }}
-            placeholder="닉네임을 기입해주세요"
-          />
-        </Form.Item>
-        <label>운동 등급</label>
-        <Form.Item name="level">
-          <Select
-            onChange={() => {
-              setIsRank(true);
-            }}
-            placeholder="운동 등급을 정해주세요"
-            style={{
-              width: 200,
-            }}
-            options={[
-              {
-                label: "초급",
-                value: "1",
-              },
-              {
-                label: "중급",
-                value: "2",
-              },
-              {
-                label: "상급",
-                value: "3",
-              },
-            ]}
-          />
-        </Form.Item>
-        <label>몸무게</label>
-        <Form.Item name="weight">
-          <Input
-            onChange={() => {
-              setIsUserName(true);
-            }}
-            placeholder="닉네임을 기입해주세요"
-          />
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            등록
-          </Button>
-        </Form.Item>
-      </Form>
-    </div>
+    <Row justify="center">
+      <Col>
+        <Form onFinish={onFinish}>
+          <label>이름</label>
+          <Form.Item name="userName" rules={[{ validator: validateNickname }]}>
+            <Input
+              onChange={() => {
+                setIsUserName(true);
+              }}
+              placeholder="닉네임을 기입해주세요"
+            />
+          </Form.Item>
+          <label>운동 등급</label>
+          <Form.Item name="level" rules={[{ validator: levelValidate }]}>
+            <Select
+              onChange={() => {
+                setIsRank(true);
+              }}
+              placeholder="운동 등급을 정해주세요"
+              style={{
+                width: 200,
+              }}
+              options={[
+                {
+                  label: "초급",
+                  value: "1",
+                },
+                {
+                  label: "중급",
+                  value: "2",
+                },
+                {
+                  label: "상급",
+                  value: "3",
+                },
+              ]}
+            />
+          </Form.Item>
+          <label>몸무게</label>
+          <Form.Item name="weight" rules={[{ validator: validateWeight }]}>
+            <Input
+              onChange={() => {
+                setIsUserName(true);
+              }}
+              placeholder="몸무게를 기입해주세요"
+            />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              등록
+            </Button>
+          </Form.Item>
+        </Form>
+      </Col>
+    </Row>
   );
 };
 
