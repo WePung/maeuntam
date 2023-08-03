@@ -7,6 +7,7 @@ import {
   validateNickname,
   validateWeight,
 } from "../utils/SubmitValidator";
+import { MehOutlined } from "@ant-design/icons";
 
 const Submit = () => {
   const [cookies, setCookie, removeCookie] = useCookies();

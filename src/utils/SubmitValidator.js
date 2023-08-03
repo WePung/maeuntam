@@ -9,9 +9,7 @@ export const validateNickname = (_, value) => {
   }
   const nicknameLength = value.length;
   if (nicknameLength < 2 || nicknameLength >= 20) {
-    return Promise.reject(
-      new Error("한글 1~10자, 영문 및 숫자 2~20자까지 입력해주세요")
-    );
+    return Promise.reject(new Error("닉네임은 필수 항목입니다."));
   }
   return Promise.resolve();
 };

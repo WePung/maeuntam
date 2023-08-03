@@ -1,5 +1,5 @@
 import { Button, Col, Row, Modal, Avatar } from "antd";
-import { EditOutlined } from "@ant-design/icons";
+import { EditOutlined, MehOutlined } from "@ant-design/icons";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
@@ -42,7 +42,7 @@ const MyPage = () => {
             marginTop: "2rem",
           }}
         >
-          <Avatar />
+          <MehOutlined style={{ color: "red" }} />
           <ul style={{ listStyle: "none" }}>
             <li>{cookies.userInfo.userName}</li>
             <li>운동 등급 : {rank(cookies.userInfo.level)}</li>
