@@ -36,14 +36,11 @@ const MyPage = () => {
           xs={9}
           md={2}
           style={{
-            background: "red",
-            border: "1px solid black",
-            borderRadius: "10px",
             marginTop: "2rem",
           }}
         >
           <MehOutlined style={{ color: "red" }} />
-          <ul style={{ listStyle: "none" }}>
+          <ul style={{ listStyle: "none", color: "white" }}>
             <li>{cookies.userInfo.userName}</li>
             <li>운동 등급 : {rank(cookies.userInfo.level)}</li>
             <li>몸무게 : {cookies.userInfo.weight}kg</li>

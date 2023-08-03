@@ -2,6 +2,7 @@ import { Button, Modal } from "antd";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { Outlet, useNavigate } from "react-router-dom";
+import { UserOutlined, HomeOutlined, FireOutlined } from "@ant-design/icons";
 
 const Menu = () => {
   const [cookies] = useCookies();
@@ -21,7 +22,8 @@ const Menu = () => {
     <div>
       <Outlet />
       <div>
-        <Button
+        <ul
+          style={{ listStyle: "none", float: "left" }}
           onClick={() => {
             if (cookies.userInfo != 1) {
               navigator("/todo");
@@ -30,16 +32,24 @@ const Menu = () => {
             }
           }}
         >
-          운동 시작
-        </Button>
-        <Button
+          <li>
+            <FireOutlined />
+          </li>
+          <li>운동 시작</li>
+        </ul>
+        <ul
+          style={{ listStyle: "none", float: "left" }}
           onClick={() => {
             navigator("/");
           }}
         >
-          홈
-        </Button>
-        <Button
+          <li>
+            <HomeOutlined />
+          </li>
+          <li>홈</li>
+        </ul>
+        <ul
+          style={{ listStyle: "none", float: "left" }}
           onClick={() => {
             if (cookies.userInfo != 1) {
               navigator("/profile");
@@ -48,8 +58,11 @@ const Menu = () => {
             }
           }}
         >
-          프로필
-        </Button>
+          <li>
+            <UserOutlined />
+          </li>
+          <li>프로필</li>
+        </ul>
       </div>
       <Modal
         title="프로필 기입 후 사용 가능합니다."

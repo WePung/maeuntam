@@ -26,7 +26,9 @@ const Home = () => {
       {cookies.userInfo == 1 ? (
         <></>
       ) : (
-        <h1>{cookies?.userInfo?.userName}님, 안녕하세요</h1>
+        <h1 style={{ color: "white" }}>
+          {cookies?.userInfo?.userName}님, 안녕하세요
+        </h1>
       )}
       <Row justify={"center"}>
         <Col xs={16} md={7}></Col>

@@ -32,7 +32,7 @@ const Submit = () => {
     <Row justify="center">
       <Col>
         <Form onFinish={onFinish}>
-          <label>이름</label>
+          <label style={{ color: "white" }}>이름</label>
           <Form.Item name="userName" rules={[{ validator: validateNickname }]}>
             <Input
               onChange={() => {
@@ -41,7 +41,7 @@ const Submit = () => {
               placeholder="닉네임을 기입해주세요"
             />
           </Form.Item>
-          <label>운동 등급</label>
+          <label style={{ color: "white" }}>운동 등급</label>
           <Form.Item name="level" rules={[{ validator: levelValidate }]}>
             <Select
               onChange={() => {
@@ -67,7 +67,7 @@ const Submit = () => {
               ]}
             />
           </Form.Item>
-          <label>몸무게</label>
+          <label style={{ color: "white" }}>몸무게</label>
           <Form.Item name="weight" rules={[{ validator: validateWeight }]}>
             <Input
               onChange={() => {
