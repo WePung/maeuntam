@@ -3,11 +3,15 @@ import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { Outlet, useNavigate } from "react-router-dom";
 import { UserOutlined, HomeOutlined, FireOutlined } from "@ant-design/icons";
+import { CurrentClick, MenuWrapper } from "../../styles/MenuStyle";
 
 const Menu = () => {
   const [cookies] = useCookies();
   const navigator = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [nowHome, setNowHome] = useState(false);
+  const [nowTodo, setNowTodo] = useState(false);
+  const [nowProfile, setNowProfile] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
   };
@@ -21,10 +25,13 @@ const Menu = () => {
   return (
     <div>
       <Outlet />
-      <div>
-        <ul
-          style={{ listStyle: "none", float: "left" }}
+      <MenuWrapper>
+        <CurrentClick
+          value={nowTodo}
           onClick={() => {
+            setNowTodo(true);
+            setNowHome(false);
+            setNowProfile(false);
             if (cookies.userInfo != 1) {
               navigator("/todo");
             } else {
@@ -36,10 +43,13 @@ const Menu = () => {
             <FireOutlined />
           </li>
           <li>운동 시작</li>
-        </ul>
-        <ul
-          style={{ listStyle: "none", float: "left" }}
+        </CurrentClick>
+        <CurrentClick
+          value={nowHome}
           onClick={() => {
+            setNowTodo(false);
+            setNowHome(true);
+            setNowProfile(false);
             navigator("/");
           }}
         >
@@ -47,10 +57,13 @@ const Menu = () => {
             <HomeOutlined />
           </li>
           <li>홈</li>
-        </ul>
-        <ul
-          style={{ listStyle: "none", float: "left" }}
+        </CurrentClick>
+        <CurrentClick
+          value={nowProfile}
           onClick={() => {
+            setNowTodo(false);
+            setNowHome(false);
+            setNowProfile(true);
             if (cookies.userInfo != 1) {
               navigator("/profile");
             } else {
@@ -62,8 +75,8 @@ const Menu = () => {
             <UserOutlined />
           </li>
           <li>프로필</li>
-        </ul>
-      </div>
+        </CurrentClick>
+      </MenuWrapper>
       <Modal
         title="프로필 기입 후 사용 가능합니다."
         open={isModalOpen}

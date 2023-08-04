@@ -154,7 +154,7 @@ const TodoExcersise = () => {
         )}
         {isExsercise ? (
           <>
-            <div>
+            <div style={{ color: "white" }}>
               <h1>{exsercise(role)[info]?.label}</h1>
               <p>{exsercise(role)[info]?.info}</p>
               <iframe
