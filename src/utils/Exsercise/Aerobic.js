@@ -39,7 +39,7 @@ export const Aerobic = [
     step: [
       {
         key: 1,
-        ldescriptionabel: "양팔을 위로 올렸다가 내리면서 허리를 숙입니다",
+        description: "양팔을 위로 올렸다가 내리면서 허리를 숙입니다",
       },
       {
         key: 2,

@@ -1,4 +1,4 @@
-import { Button, Form, Input, Select, Steps } from "antd";
+import { Button, ConfigProvider, Form, Input, Select, Steps } from "antd";
 import React, { useEffect, useState } from "react";
 import Menu from "../components/menu/Menu";
 import Stopwatch from "../components/Stopwatch";
@@ -23,6 +23,10 @@ const TodoExcersise = () => {
   const [cookies, setCookie, removeCookie] = useCookies();
   const [input, setInput] = useState(cookies.exsercise);
   const [info, setInfo] = useState();
+  const [current, setCurrent] = useState(0);
+  const onChange = (value) => {
+    setCurrent(value);
+  };
 
   useEffect(() => {
     setTime(0);
@@ -118,39 +122,42 @@ const TodoExcersise = () => {
         {!role ? (
           <></>
         ) : (
-          <Form.Item name="exsercise">
-            <Select
-              defaultValue="운동 종류를 선택해주세요"
-              onChange={(e) => {
-                setIsExsercise(true);
-                const id = exsercise(role).map((i) => {
-                  if (i.label == e) {
-                    setInfo(i.id);
+          <>
+            <label style={{ color: "white" }}>운동</label>
+            <Form.Item name="exsercise">
+              <Select
+                defaultValue="운동 종류를 선택해주세요"
+                onChange={(e) => {
+                  setIsExsercise(true);
+                  const id = exsercise(role).map((i) => {
+                    if (i.label == e) {
+                      setInfo(i.id);
+                    }
+                  });
+                  if (e == "플랭크" || e == "러닝") {
+                    setTimeToNum(false);
+                  } else {
+                    setTimeToNum(true);
                   }
-                });
-                if (e == "플랭크" || e == "러닝") {
-                  setTimeToNum(false);
-                } else {
-                  setTimeToNum(true);
+                }}
+                showSearch
+                style={{
+                  width: 200,
+                }}
+                placeholder="Search to Select"
+                optionFilterProp="children"
+                filterOption={(input, option) =>
+                  (option?.label ?? "").includes(input)
                 }
-              }}
-              showSearch
-              style={{
-                width: 200,
-              }}
-              placeholder="Search to Select"
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                (option?.label ?? "").includes(input)
-              }
-              filterSort={(optionA, optionB) =>
-                (optionA?.label ?? "")
-                  .toLowerCase()
-                  .localeCompare((optionB?.label ?? "").toLowerCase())
-              }
-              options={exsercise(role)}
-            />
-          </Form.Item>
+                filterSort={(optionA, optionB) =>
+                  (optionA?.label ?? "")
+                    .toLowerCase()
+                    .localeCompare((optionB?.label ?? "").toLowerCase())
+                }
+                options={exsercise(role)}
+              />
+            </Form.Item>
+          </>
         )}
         {isExsercise ? (
           <>
@@ -164,7 +171,21 @@ const TodoExcersise = () => {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
               />
-              <Steps direction="vertical" items={exsercise(role)[info].step} />
+              <ConfigProvider
+                theme={{
+                  token: {
+                    colorText: "white",
+                    colorTextDisabled: "gray",
+                  },
+                }}
+              >
+                <Steps
+                  current={current}
+                  onChange={onChange}
+                  direction="vertical"
+                  items={exsercise(role)[info].step}
+                />
+              </ConfigProvider>
             </div>
             {!timeToNum ? (
               <Stopwatch time={time} setTime={setTime} />
