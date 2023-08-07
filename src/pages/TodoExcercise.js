@@ -88,9 +88,9 @@ const TodoExcersise = () => {
     }
   };
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <Form onFinish={onFinish}>
-        <label>종류</label>
+        <label style={{ color: "white" }}>종류</label>
         <Form.Item name="typeOfExsercise">
           <Select
             defaultValue="운동 종류를 선택해주세요"

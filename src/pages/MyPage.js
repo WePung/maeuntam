@@ -30,7 +30,7 @@ const MyPage = () => {
     }
   };
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <Row justify="center">
         <Col
           xs={9}
