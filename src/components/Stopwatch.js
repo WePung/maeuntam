@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import React, { useState, useEffect } from "react";
 
 const Stopwatch = ({ time, setTime }) => {
@@ -40,10 +41,14 @@ const Stopwatch = ({ time, setTime }) => {
 
   return (
     <div>
-      <p>{formatTime(time)}</p>
-      <button onClick={handleStart}>Start</button>
-      <button onClick={handleStop}>Stop</button>
-      <button onClick={handleReset}>Reset</button>
+      <h3 style={{ color: "white" }}>{formatTime(time)}</h3>
+      <Button onClick={handleStart}>Start</Button>
+      <Button style={{ marginLeft: "3%" }} onClick={handleStop}>
+        Stop
+      </Button>
+      <Button style={{ marginLeft: "3%" }} onClick={handleReset}>
+        Reset
+      </Button>
     </div>
   );
 };

@@ -180,6 +180,7 @@ const TodoExcersise = () => {
                 }}
               >
                 <Steps
+                  style={{ marginLeft: "5%" }}
                   current={current}
                   onChange={onChange}
                   direction="vertical"
@@ -206,7 +207,11 @@ const TodoExcersise = () => {
           <></>
         )}
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button
+            style={{ marginTop: "1rem" }}
+            type="primary"
+            htmlType="submit"
+          >
             등록
           </Button>
         </Form.Item>

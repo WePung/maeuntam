@@ -13,13 +13,24 @@ const getMonthData = (value) => {
 };
 
 const info = (item) => {
+  const e = () => {
+    if (item.title == "플랭크" || "런닝") {
+      return (
+        <div>
+          {item.title} : {item.number}초
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          {item.title} : {item.number}회
+        </div>
+      );
+    }
+  };
   Modal.info({
     title: "This is a notification message",
-    content: (
-      <div>
-        {item.content} : {item.number}
-      </div>
-    ),
+    content: e(),
     onOk() {},
   });
 };
@@ -49,6 +60,7 @@ const Calender = () => {
                       <li
                         key={v}
                         onClick={() => {
+                          console.log(v);
                           info(v);
                         }}
                       >
