@@ -1,4 +1,4 @@
-import { Button, Modal } from "antd";
+import { Button, Col, Modal, Row } from "antd";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
 import { Outlet, useNavigate } from "react-router-dom";
@@ -26,56 +26,64 @@ const Menu = () => {
     <div>
       <Outlet />
       <MenuWrapper>
-        <CurrentClick
-          value={nowTodo}
-          onClick={() => {
-            setNowTodo(true);
-            setNowHome(false);
-            setNowProfile(false);
-            if (cookies.userInfo != 1) {
-              navigator("/todo");
-            } else {
-              showModal();
-            }
-          }}
-        >
-          <li>
-            <FireOutlined />
-          </li>
-          <li>운동 시작</li>
-        </CurrentClick>
-        <CurrentClick
-          value={nowHome}
-          onClick={() => {
-            setNowTodo(false);
-            setNowHome(true);
-            setNowProfile(false);
-            navigator("/");
-          }}
-        >
-          <li>
-            <HomeOutlined />
-          </li>
-          <li>홈</li>
-        </CurrentClick>
-        <CurrentClick
-          value={nowProfile}
-          onClick={() => {
-            setNowTodo(false);
-            setNowHome(false);
-            setNowProfile(true);
-            if (cookies.userInfo != 1) {
-              navigator("/profile");
-            } else {
-              showModal();
-            }
-          }}
-        >
-          <li>
-            <UserOutlined />
-          </li>
-          <li>프로필</li>
-        </CurrentClick>
+        <Row>
+          <Col md={15} xs={8}>
+            <CurrentClick
+              value={nowTodo}
+              onClick={() => {
+                setNowTodo(true);
+                setNowHome(false);
+                setNowProfile(false);
+                if (cookies.userInfo != 1) {
+                  navigator("/todo");
+                } else {
+                  showModal();
+                }
+              }}
+            >
+              <li>
+                <FireOutlined />
+              </li>
+              <li>운동 시작</li>
+            </CurrentClick>
+          </Col>
+          <Col md={15} xs={8}>
+            <CurrentClick
+              value={nowHome}
+              onClick={() => {
+                setNowTodo(false);
+                setNowHome(true);
+                setNowProfile(false);
+                navigator("/");
+              }}
+            >
+              <li>
+                <HomeOutlined />
+              </li>
+              <li>홈</li>
+            </CurrentClick>
+          </Col>
+          <Col md={15} xs={8}>
+            <CurrentClick
+              value={nowProfile}
+              onClick={() => {
+                setNowTodo(false);
+                setNowHome(false);
+                setNowProfile(true);
+                if (cookies.userInfo != 1) {
+                  navigator("/profile");
+                } else {
+                  showModal();
+                }
+              }}
+            >
+              <li>
+                <UserOutlined />
+              </li>
+              <li>프로필</li>
+            </CurrentClick>
+          </Col>
+        </Row>
       </MenuWrapper>
       <Modal
         title="프로필 기입 후 사용 가능합니다."
