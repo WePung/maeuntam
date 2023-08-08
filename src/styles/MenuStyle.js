@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const MenuWrapper = styled.div`
   display: inline-block;
   width: 100%;
-  height: 30px;
+  height: 50px;
   background: #282c34;
   position: sticky;
   bottom: 30px;

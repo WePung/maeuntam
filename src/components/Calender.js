@@ -82,6 +82,6 @@ const Calender = () => {
     if (info.type === "month") return monthCellRender(current);
     return info.originNode;
   };
-  return <Calendar cellRender={cellRender} />;
+  return <Calendar cellRender={cellRender} fullscreen={false} />;
 };
 export default Calender;
