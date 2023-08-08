@@ -4,6 +4,7 @@ import { useCookies } from "react-cookie";
 import Calender from "../components/Calender";
 // import StartBtn from "../components/StartBtn";
 import { useNavigate } from "react-router-dom";
+import Test from "../components/Test";
 
 const Home = () => {
   const [cookies, setCookie] = useCookies();
@@ -35,7 +36,8 @@ const Home = () => {
       </Row>
       <Row justify={"center"}>
         <Col xs={23} md={19}>
-          <Calender />
+          {/* <Calender /> */}
+          <Test />
         </Col>
       </Row>
     </>
